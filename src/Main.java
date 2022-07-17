@@ -13,8 +13,6 @@ public class Main {
         for(User user:users){
             System.out.println("名前："+user.getName()+", "+"生年月日："+user.getBirthdate());
         }
-//        System.out.println("【すべてのユーザーを表示する】");
-//
-//        users.forEach(u-> System.out.printf("名前: %s, 生年月日: %s\n",u.getName(),u.getBirthdate()));
+
     }
 }
