@@ -11,7 +11,7 @@ public class Main {
         List<User> users = List.of(
                 new User("佐藤美咲", LocalDate.of(1990, 1, 1)),
                 new User("鈴木太郎", LocalDate.of(1991, 2, 2)),
-                new User("山田一郎", LocalDate.of(2003, 3, 3)),
+                new User("山田一郎", LocalDate.of(2000, 1, 1)),
                 new User("鈴木花子", LocalDate.of(2002, 4, 4))
         );
 
@@ -25,7 +25,7 @@ public class Main {
         System.out.println("【名前が鈴木で始まる人のみを表示する】");
         users.stream().filter(user -> user.getName().startsWith("鈴木")).forEach(user -> System.out.printf("%s\n", user.getName()));
 
-        LocalDate defaultDate = LocalDate.of(2001, 1, 1);
+        LocalDate defaultDate = LocalDate.of(1999, 12, 31);
         System.out.println("【生年月日が2000年1月1日以降の人のみを表示する】");
         users.stream().filter(user -> user.getBirthdate().isAfter(defaultDate)).forEach(user -> System.out.printf("名前: %s, 生年月日: %s\n", user.getName(), user.getBirthdate()));
 
