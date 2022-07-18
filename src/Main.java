@@ -25,7 +25,7 @@ public class Main {
         System.out.println("【名前が鈴木で始まる人のみを表示する】");
         users.stream().filter(user -> user.getName().startsWith("鈴木")).forEach(user -> System.out.printf("%s\n", user.getName()));
 
-        LocalDate defaultDate = LocalDate.of(2001, 01, 01);
+        LocalDate defaultDate = LocalDate.of(2001, 1, 1);
         System.out.println("【生年月日が2000年1月1日以降の人のみを表示する】");
         users.stream().filter(user -> user.getBirthdate().isAfter(defaultDate)).forEach(user -> System.out.printf("名前: %s, 生年月日: %s\n", user.getName(), user.getBirthdate()));
 
