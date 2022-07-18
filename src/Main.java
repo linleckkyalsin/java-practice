@@ -18,7 +18,7 @@ public class Main {
         users.forEach(user -> System.out.printf("名前: %s, 生年月日: %s\n", user.getName(), user.getBirthdate()));
 //      すべてのユーザーを表示する。ただし生年月日はyyyy/MM/dd(E)形式で出力する
         System.out.println("【すべてのユーザーを表示する。ただし生年月日はyyyy/MM/dd(E)形式で出力する】");
-        users.forEach(user -> System.out.printf("名前: %s, 生年月日: %s\n", user.getName(), user.getBirthdate().format(DateTimeFormatter.ofPattern("yyyy年MM月dd日(E)")) ));
+        users.forEach(user -> System.out.printf("名前: %s, 生年月日: %s\n", user.getName(), user.getBirthdate().format(DateTimeFormatter.ofPattern("yyyy年MM月dd日(E)"))));
 //      名前が鈴木で始まる人のみを表示する
         System.out.println("【名前が鈴木で始まる人のみを表示する】");
         users.stream().filter(user -> user.getName().startsWith("鈴木")).forEach(user -> System.out.printf("%s\n", user.getName()));
