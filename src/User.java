@@ -1,10 +1,10 @@
 import java.time.LocalDate;
 import java.util.Objects;
 
-
 public class User {
     private final String name;
     private final LocalDate birthdate;
+
 
     public User(String name, LocalDate birthdate) {
         this.name = name;
@@ -24,7 +24,7 @@ public class User {
         if (this == o) return true;
         if (!(o instanceof User)) return false;
         User user = (User) o;
-        return name.equals(user.name) && birthdate.equals(user.birthdate);
+        return Objects.equals(name, user.name) && Objects.equals(birthdate, user.birthdate);
     }
 
     @Override
