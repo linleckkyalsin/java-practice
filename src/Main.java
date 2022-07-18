@@ -39,6 +39,9 @@ public class Main {
         System.out.println("【2022年7月1日時点の各ユーザーの年齢を表示する】");
         users.forEach(user -> System.out.printf("名前: %s,　年齢: %s歳\n", user.getName(), getAge(user.getBirthdate())));
 
+        System.out.println("【2022年7月1日時点で20歳以下のユーザーを表示する】");
+        users.stream().filter(user -> getAge(user.getBirthdate()) <= 20).forEach(user -> System.out.printf("名前: %s,　年齢: %s歳\n", user.getName(), getAge(user.getBirthdate())));
+
         System.out.println("【2022年7月1日時点で20歳未満のユーザーを表示する】");
         users.stream().filter(user -> getAge(user.getBirthdate()) < 20).forEach(user -> System.out.printf("名前: %s,　年齢: %s歳\n", user.getName(), getAge(user.getBirthdate())));
     }
