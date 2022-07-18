@@ -19,6 +19,7 @@ public class User {
         return birthdate;
     }
 
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
