@@ -47,7 +47,7 @@ public class Main {
     }
 
     public static Integer calculateAge(LocalDate birthdate, LocalDate localdate) {
-        LocalDate date = LocalDate.of(2022, 7, 1);
+        
         return Period.between(birthdate, localdate).getYears();
     }
 }
