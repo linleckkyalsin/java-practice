@@ -11,7 +11,7 @@ public class Main {
         List<User> users = List.of(
                 new User("佐藤美咲", LocalDate.of(1990, 1, 1)),
                 new User("鈴木太郎", LocalDate.of(1991, 2, 2)),
-                new User("山田一郎", LocalDate.of(2000, 1, 1)),
+                new User("山田一郎", LocalDate.of(2003, 3, 3)),
                 new User("鈴木花子", LocalDate.of(2002, 4, 4))
         );
 
@@ -34,5 +34,15 @@ public class Main {
 
         System.out.println("【生年月日の降順に並び替えて表示する】");
         users.stream().sorted(Comparator.comparing(User::getBirthdate).reversed()).collect(Collectors.toList()).forEach(user -> System.out.printf("名前: %s, 生年月日: %s\n", user.getName(), user.getBirthdate()));
+
+        System.out.println("【2022年7月1日時点の各ユーザーの年齢を表示する】");
+        users.forEach(user -> System.out.printf("名前: %s,　年齢: %s歳\n", user.getName(), user.getAge(LocalDate.of(2022, 7, 1))));
+
+        System.out.println("【2022年7月1日時点で20歳以下のユーザーを表示する】");
+        users.stream().filter(user -> user.getAge(LocalDate.of(2022, 7, 1)) <= 20).forEach(user -> System.out.printf("名前: %s,　年齢: %s歳\n", user.getName(), calculateAge(user.getBirthdate(), LocalDate.of(2022, 7, 1))));
+
+        System.out.println("【2022年7月1日時点で20歳未満のユーザーを表示する】");
+        users.stream().filter(user -> user.getAge(LocalDate.of(2022, 7, 1)) < 20).forEach(user -> System.out.printf("名前: %s,　年齢: %s歳\n", user.getName(), calculateAge(user.getBirthdate(), LocalDate.of(2022, 7, 1))));
     }
+
 }

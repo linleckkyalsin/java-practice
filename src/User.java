@@ -1,4 +1,5 @@
 import java.time.LocalDate;
+import java.time.Period;
 import java.util.Objects;
 
 public class User {
@@ -17,6 +18,10 @@ public class User {
 
     public LocalDate getBirthdate() {
         return birthdate;
+    }
+
+    public Integer getAge(LocalDate currentDate) {
+        return Period.between(this.getBirthdate(), currentDate).getYears();
     }
 
     @Override
