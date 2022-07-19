@@ -39,10 +39,11 @@ public class Main {
         users.forEach(user -> System.out.printf("名前: %s,　年齢: %s歳\n", user.getName(), user.getAge(LocalDate.of(2022, 7, 1))));
 
         System.out.println("【2022年7月1日時点で20歳以下のユーザーを表示する】");
-        users.stream().filter(user -> user.getAge(LocalDate.of(2022, 7, 1)) <= 20).forEach(user -> System.out.printf("名前: %s,　年齢: %s歳\n", user.getName(), calculateAge(user.getBirthdate(), LocalDate.of(2022, 7, 1))));
+        users.stream().filter(user -> user.getAge(LocalDate.of(2022, 7, 1)) <= 20).forEach(user -> System.out.printf("名前: %s,　年齢: %s歳\n", user.getName(), user.getAge(LocalDate.of(2022, 7, 1))));
 
         System.out.println("【2022年7月1日時点で20歳未満のユーザーを表示する】");
-        users.stream().filter(user -> user.getAge(LocalDate.of(2022, 7, 1)) < 20).forEach(user -> System.out.printf("名前: %s,　年齢: %s歳\n", user.getName(), calculateAge(user.getBirthdate(), LocalDate.of(2022, 7, 1))));
+        users.stream().filter(user -> user.getAge(LocalDate.of(2022, 7, 1)) < 20).forEach(user -> System.out.printf("名前: %s,　年齢: %s歳\n", user.getName(), user.getAge(LocalDate.of(2022, 7, 1))));
     }
 
+   
 }
