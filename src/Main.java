@@ -1,5 +1,4 @@
 import java.time.LocalDate;
-import java.time.Period;
 import java.time.format.DateTimeFormatter;
 import java.util.Comparator;
 import java.util.List;
@@ -46,8 +45,4 @@ public class Main {
         users.stream().filter(user -> user.getAge(LocalDate.of(2022, 7, 1)) < 20).forEach(user -> System.out.printf("名前: %s,　年齢: %s歳\n", user.getName(), calculateAge(user.getBirthdate(), LocalDate.of(2022, 7, 1))));
     }
 
-    public static Integer calculateAge(LocalDate birthdate, LocalDate localdate) {
-
-        return Period.between(birthdate, localdate).getYears();
-    }
 }
